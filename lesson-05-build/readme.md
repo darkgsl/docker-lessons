@@ -7,22 +7,31 @@
 - docker build создаёт image из Dockerfile
 - тег (-t) обязателен для удобной работы
 - image без тега = сложно использовать
+- различия между shell и exec формами CMD
+- exec не использует shell → нет $(...), &&, подстановок
+- ENTRYPOINT vs CMD
 
 ## Tasks  
-01-instructions
-- 01: basic build
-02-practicies
-- 01:
+### 01-instructions
+- 01-basic build
+- 02-CMD
+### 02-practices
+- 01-
+
 ## 🧠 Ключевые выводы
 - всегда указывай тег
 - latest не использовать в проде
+- shell form → выполняется через /bin/sh -c
+- exec form → НЕ использует shell
+- поэтому exec НЕ поддерживает $(date), $VAR, && и т.д.
 ## 🔥 Полезные команды
 ```bash
 docker build -t neomaster/test:v1 .
 docker images
 ```
 ## 📎 Заметки
-- - image без тега неудобен (сложно ссылаться)
+- image без тега неудобен (сложно ссылаться)
+- exec form → запускаемый процесс становится PID 1 (без shell)
 
 
 
