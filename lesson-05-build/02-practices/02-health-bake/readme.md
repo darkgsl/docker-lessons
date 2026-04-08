@@ -15,6 +15,8 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
 ## Result
 HEALTHCHECK
 два период апроверок, во время запуска и после запуска
+HEALTHCHECK NONE отключаем проверку из родительского image
+HEALTHCHECK может быть несколько
 ...
 
 docker buildx bake lesson5
