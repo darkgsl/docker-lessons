@@ -1,0 +1,5 @@
+services:
+  test:
+    build: .
+    image: composetest:v1.0
+    

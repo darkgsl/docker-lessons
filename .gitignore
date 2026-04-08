@@ -2,3 +2,4 @@
 docker-lessons.code-workspace
 *.tmp
 *.swp
+*.env
