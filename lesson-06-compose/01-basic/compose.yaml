@@ -1,5 +1,17 @@
 services:
   test:
-    build: .
-    image: composetest:v1.0
-    
+    build: 
+      context: .
+      args:
+        CACHE_BUST: ${CACHE_BUST}
+        NGINX_VERSION: ${NGINX_VERSION}
+        MODE:  ${MODE}    
+    image: lsn6:v${IMG_RELEASE}
+    ports:
+      - "${APP_PORT}:8080"
+
+    environment:
+      - IMG_RELEASE=${IMG_RELEASE}
+
+
+ 

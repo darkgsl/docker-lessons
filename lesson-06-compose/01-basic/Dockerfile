@@ -1,15 +1,15 @@
 # FROM nginx:1.28.3-alpine-slim
 FROM alpine:3.23.3
 
-ARG BLD_RELEASE=1.0
+ARG CACHE_BUST
+
 ARG NGINX_VERSION=1.28.3-r0
 ARG MODE=440
-
-ENV IMG_RELEASE=${BLD_RELEASE}
-
+ENV IMG_RELEASE=1.0
 
 
-RUN echo "BUILD RELEASE ${BLD_RELEASE}" && \
+
+RUN echo "IMG RELEASE ${IMG_RELEASE}" && \
 # для apk это лишнее
 # apk update && \ 
 apk add --no-cache \

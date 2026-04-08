@@ -12,6 +12,10 @@
 - можно build, а можно image  уазать для запуска
 - если build, То указываем все нужные параметры
 
+docker compose
+почти все сервисные команды совпадают: ps, top, stats
+работает в переделах одного хоста
+
 можно собрать образ , но не запустить
 docker compose build
 можно запустить и пересобрать
@@ -21,6 +25,12 @@ docker compose build --no-cache
 можно указывать зависимости
 а можно просто up and down. image соберется если его нет и удалится контейнер после down
 
+docker compose config -q
+check config
+
+
+Если уже был билд, но yaml поменял, но не опменял image name
+то docker compose up поднимет тот же image
 
 
 ...
